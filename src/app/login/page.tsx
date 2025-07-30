@@ -242,11 +242,9 @@ export default function LoginForm() {
     }
   };
 
-  // Handle form submission
   const handleSubmit = () => {
     setHasSubmitted(true);
 
-    // Validate all fields on submit
     const emailError = validateEmail(formData.email);
     const passwordError = validatePassword(formData.password);
 
@@ -269,7 +267,7 @@ export default function LoginForm() {
     };
 
     const serverErrors = simulateServerErrors();
-
+// Hello change
     // Set submit errors
     setSubmitErrors({
       email: emailError || serverErrors.email || "",
