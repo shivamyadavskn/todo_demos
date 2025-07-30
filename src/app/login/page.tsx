@@ -244,13 +244,10 @@ export default function LoginForm() {
 
   const handleSubmit = () => {
     setHasSubmitted(true);
-
     const emailError = validateEmail(formData.email);
     const passwordError = validatePassword(formData.password);
-
     // Simulate server-side validation errors
     const simulateServerErrors = () => {
-      // Simulate different error scenarios
       if (formData.email === "taken@example.com") {
         return { email: "This email is already registered" };
       }
@@ -267,7 +264,6 @@ export default function LoginForm() {
     };
 
     const serverErrors = simulateServerErrors();
-// Hello change
     // Set submit errors
     setSubmitErrors({
       email: emailError || serverErrors.email || "",
@@ -313,11 +309,10 @@ export default function LoginForm() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.email || (hasSubmitted && submitErrors.email)
-                ? "border-red-500 focus:ring-red-500"
-                : "border-gray-300"
-            }`}
+            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email || (hasSubmitted && submitErrors.email)
+              ? "border-red-500 focus:ring-red-500"
+              : "border-gray-300"
+              }`}
             placeholder="Enter your email"
           />
 
@@ -346,11 +341,10 @@ export default function LoginForm() {
             name="password"
             value={formData.password}
             onChange={handleChange}
-            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.password || (hasSubmitted && submitErrors.password)
-                ? "border-red-500 focus:ring-red-500"
-                : "border-gray-300"
-            }`}
+            className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.password || (hasSubmitted && submitErrors.password)
+              ? "border-red-500 focus:ring-red-500"
+              : "border-gray-300"
+              }`}
             placeholder="Enter your password"
           />
 
